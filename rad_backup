@@ -42,7 +42,7 @@ else
 fi
 
 #Send output to telegram
-curl --silent --data "chat_id=$CHAT_ID&text=$output" "https://api.telegram.org/bot$BOT_TOKEN/sendMessage"
+curl --silent --data "chat_id=$CHAT_ID&text=$output" "https://api.telegram.org/bot$BOT_TOKEN/sendMessage" &> /dev/null
 
 echo "script success"
 
