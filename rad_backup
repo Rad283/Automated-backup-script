@@ -46,11 +46,8 @@ else
 fi
 
 #Send output to telegram
-<<<<<<< HEAD
-curl --silent --data "chat_id=$CHAT_ID&text=$output" "https://api.telegram.org/bot$BOT_TOKEN/sendMessage" &> /dev/null
-=======
 curl --data "chat_id=$CHAT_ID&text=$output" "https://api.telegram.org/bot$BOT_TOKEN/sendMessage" &> /dev/null
->>>>>>> 4cbd433 (small changes in echo output)
+
 
                                                                                                                                             48,0-1        Bot
 
