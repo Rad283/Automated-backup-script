@@ -36,15 +36,22 @@ rsync -av ${input_storage}/ $input_nfs
 
 #check if that files existed on nfs folder
 if [ -f "${input_nfs}/${file_name}" ]; then
-  output="$file_name has been created successfully. Backup completed."
+  output="success! $file_name has been created on ${input_nfs} and ${input_storage}. Backup completed."
+
+  echo "script completed"
+  echo "$file_name has been created on ${input_nfs} and ${input_storage}"
+
 else
   output="Erorr, $file_name does not exist. Backup Failed!"
 fi
 
 #Send output to telegram
+<<<<<<< HEAD
 curl --silent --data "chat_id=$CHAT_ID&text=$output" "https://api.telegram.org/bot$BOT_TOKEN/sendMessage" &> /dev/null
+=======
+curl --data "chat_id=$CHAT_ID&text=$output" "https://api.telegram.org/bot$BOT_TOKEN/sendMessage" &> /dev/null
+>>>>>>> 4cbd433 (small changes in echo output)
 
-echo "script success"
+                                                                                                                                            48,0-1        Bot
 
-echo "$file_name"
 
